@@ -12,6 +12,7 @@ class Pokemon
   
   def self.save(name, type, db)
     sql = <<-SQL
+<<<<<<< HEAD
       INSERT INTO pokemon (name, type) VALUES (?, ?)
     SQL
     
@@ -27,6 +28,15 @@ class Pokemon
   def self.new_from_db(row, db)
     new_pokemon = self.new(id: row[0], name: row[1], type: row[2], db: db)
     new_pokemon
+=======
+      INSERT INTOR pokemon (name, value) VALUES (?, ?, ?)
+    SQL
+    
+    db.execute(sql, self.name, self.type, self.db)
+  end
+  
+  def self.find
+>>>>>>> 2b9724b6bd9d03999a32e7408445d81351867aa6
   end
   
 end
